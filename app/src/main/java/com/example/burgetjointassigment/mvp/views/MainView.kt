@@ -9,5 +9,6 @@ interface MainView : BaseView{
     fun navigateToCartScreen()
     fun animateAddBurgerToCart(burger : BurgerVO, burgerImageView : ImageView)
     fun displayCountInCart(burgersInCartCount : Int)
+    fun addBurgerToCart(burger : BurgerVO, burgerImageView : ImageView)
 
 }

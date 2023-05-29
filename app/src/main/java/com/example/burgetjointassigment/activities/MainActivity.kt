@@ -109,6 +109,61 @@ lateinit var ivCart:ImageView
         tvCartCount.text = burgersInCartCount.toString()
     }
 
+    override fun addBurgerToCart(burger: BurgerVO, burgerImageView: ImageView) {
+        //Play Animation
+        val burgerPosition = getPositionOf(burgerImageView)
+        val cartPosition = getPositionOf(ivCart)
+
+        val imageSize = 80
+        val viewToAnimate = setUpViewToAnimate(
+            burger,
+            burgerImageView, imageSize
+        )
+
+        flContainer.addView(viewToAnimate)
+
+        val xAnimator = ObjectAnimator.ofFloat(
+            viewToAnimate,
+            View.TRANSLATION_X, burgerPosition[0].toFloat()
+            , (cartPosition[0] - (imageSize * 2)).toFloat()
+        )
+        xAnimator.duration = 500
+
+        val yAnimator = ObjectAnimator.ofFloat(
+            viewToAnimate,
+            View.TRANSLATION_Y, burgerPosition[1].toFloat()
+            , (cartPosition[1] - (4 * imageSize)).toFloat()
+        )
+        yAnimator.duration = 500
+
+        val alphaAnimator = ObjectAnimator.ofFloat(
+            viewToAnimate,
+            View.ALPHA, 0f, 1f
+        )
+        alphaAnimator.duration = 500
+
+        val scaleXAnimator = ObjectAnimator.ofFloat(
+            viewToAnimate,
+            View.SCALE_X, 1f, 0.25f
+        )
+
+        val scaleYAnimator = ObjectAnimator.ofFloat(
+            viewToAnimate,
+            View.SCALE_Y, 1f, 0.25f
+        )
+
+        AnimatorSet().apply {
+            play(xAnimator).with(yAnimator)
+                .with(alphaAnimator).with(scaleXAnimator).with(scaleYAnimator)
+            addListener(object : AnimatorListenerAdapter() {
+//                override fun onAnimationEnd(animation: Animator?) {
+//                    flRoot.removeView(viewToAnimate)
+//                }
+            })
+            start()
+        }
+    }
+
     override fun animateAddBurgerToCart(burger: BurgerVO, burgerImageView: ImageView) {
         //Play Animation
         val burgerPosition = getPositionOf(burgerImageView)
@@ -142,15 +197,13 @@ lateinit var ivCart:ImageView
             1f, 0.25f
         )
         scaleYAnimator.duration = 500
-
         AnimatorSet().apply {
-            play(xAnimator).with(yAnimator).with(alphaAnimator).with(scaleXAnimator)
-                .with(scaleYAnimator)
+            play(xAnimator).with(yAnimator)
+                .with(alphaAnimator).with(scaleXAnimator).with(scaleYAnimator)
             addListener(object : AnimatorListenerAdapter() {
-//                override fun onAnimationEnd(animation: Animator?) {
-//                    flContainer.removeView(viewToAnimate)
-//
-//                }
+                override fun onAnimationEnd(animation: Animator) {
+                    flContainer.removeView(viewToAnimate)
+                }
             })
             start()
         }
