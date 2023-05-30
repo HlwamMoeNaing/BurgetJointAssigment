@@ -42,13 +42,14 @@ class CartActivity : BaseActivity(), CartView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setUpAnimations()
+        setContentView(R.layout.activity_cart)
         btnCheckOut = findViewById(R.id.btnCheckOut)
         toolbar = findViewById(R.id.toolbar)
         ivCancel = findViewById(R.id.ivCancel)
         rvCart = findViewById(R.id.rvCart)
         rlThankYouMessage = findViewById(R.id.rlThankYouMessage)
-        setUpAnimations()
-        setContentView(R.layout.activity_cart)
+
         setSupportActionBar(toolbar)
         setUpPresenter()
         setUpListeners()

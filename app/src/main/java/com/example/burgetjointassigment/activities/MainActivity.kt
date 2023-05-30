@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.transition.Fade
 import android.view.View
@@ -29,6 +31,11 @@ import com.example.burgetjointassigment.mvp.views.MainView
 
 
 class MainActivity : BaseActivity(), MainView{
+    companion object {
+        fun newIntent(context: Context): Intent {
+            return Intent(context, MainActivity::class.java)
+        }
+    }
 //
     private lateinit var mBurgerAdapter: BurgerAdapter
     private lateinit var mPresenter: MainPresenter
@@ -37,6 +44,7 @@ class MainActivity : BaseActivity(), MainView{
     lateinit var tvCartCount:TextView
     lateinit var flContainer:FrameLayout
 lateinit var ivCart:ImageView
+lateinit var btnPlayGame:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +55,7 @@ lateinit var ivCart:ImageView
         rvBurgerList = findViewById(R.id.rvBurgerList)
         tvCartCount = findViewById(R.id.tvCartCount)
         flContainer = findViewById(R.id.flContainer)
+        btnPlayGame = findViewById(R.id.btnPlayGame)
 
 
         setSupportActionBar(mToolbar)
@@ -68,6 +77,9 @@ lateinit var ivCart:ImageView
     private fun setUpListeners() {
         ivCart.setOnClickListener {
             mPresenter.onTapCart()
+        }
+        btnPlayGame.setOnClickListener {
+            startActivity(GameActivity.newIntent(this))
         }
     }
 

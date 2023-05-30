@@ -24,7 +24,7 @@ class BurgerViewHolder(itemView: View, private val mDelegate: BurgerViewHolderAc
         tvBurgerName = itemView.findViewById(R.id.tvBurgerName)
         tvDescription = itemView.findViewById(R.id.tvDescription)
         ivBurger = itemView.findViewById(R.id.ivBurger)
-        cvBurgerImage.setOnClickListener {
+        itemView.setOnClickListener {
             mData?.let {
                 mDelegate.onTapBurger(it,ivBurger)
             }

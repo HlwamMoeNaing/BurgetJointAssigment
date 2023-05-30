@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">BurgetJointAssigment</string>
     <string name="action_settings">Settings</string>
+    <string name="email_hin">Email</string>
+    <string name="password_hint">Passward</string>
+    <string name="action_sign_in">Sign in</string>
 </resources>
