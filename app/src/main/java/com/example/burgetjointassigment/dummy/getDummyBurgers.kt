@@ -39,16 +39,16 @@ fun getDummyBurgers() : List<BurgerVO>{
 
     burgerThree.burgerImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Cheeseburger_with_fries.jpg/600px-Cheeseburger_with_fries.jpg"
 
-    val burgerFour = BurgerVO()
-    burgerFour.burgerName = "Veggie Burger"
-    burgerFour.burgerDescription = "A veggie burger is a burger patty that does not contain meat or any such kind of meat. These burgers may be made from ingredients like beans, especially soybeans and tofu, nuts, grains, seeds or fungi such as mushrooms or mycoprotein.\n" +
-            "\n" +
-            "The patties that are the essence of a veggie burger have existed in various Eurasian cuisines for millennia, including in the form of disc-shaped grilled or fried meatballs or as koftas, a commonplace item in Indian cuisine. These may contain meats or be made of entirely vegetarian ingredients such as legumes or other plant-derived proteins. While it is not possible, or even necessary, to identify the 'inventor' of the veggie burger, there have been numerous claimants.\n" +
-            "\n" +
-            "The veggie burger, by name, may have been created in London in 1982 by Gregory Sams, who called it the 'VegeBurger'. Gregory and his brother Craig had run a natural food restaurant in Paddington since the 1960s;[1] a Carrefour hypermarket in Southampton sold 2000 packets in three weeks after its launch.[2] An earlier reference can be heard in the June 7th 1948 episode of \"Let George Do It\" called \"The Mister Mirch Case\" where a character refers to \"vegeburgers,\" as a burger made of nuts and legumes.\n" +
-            "\n" +
-            "Using the name Gardenburger, an early veggie burger was developed by Paul Wenner around 1980 or 1981 in Wenner's vegetarian restaurant, The Gardenhouse, in Gresham, Oregon.[3]"
-    burgerFour.burgerImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Veganburger.jpeg/440px-Veganburger.jpeg"
+//    val burgerFour = BurgerVO()
+//    burgerFour.burgerName = "Veggie Burger"
+//    burgerFour.burgerDescription = "A veggie burger is a burger patty that does not contain meat or any such kind of meat. These burgers may be made from ingredients like beans, especially soybeans and tofu, nuts, grains, seeds or fungi such as mushrooms or mycoprotein.\n" +
+//            "\n" +
+//            "The patties that are the essence of a veggie burger have existed in various Eurasian cuisines for millennia, including in the form of disc-shaped grilled or fried meatballs or as koftas, a commonplace item in Indian cuisine. These may contain meats or be made of entirely vegetarian ingredients such as legumes or other plant-derived proteins. While it is not possible, or even necessary, to identify the 'inventor' of the veggie burger, there have been numerous claimants.\n" +
+//            "\n" +
+//            "The veggie burger, by name, may have been created in London in 1982 by Gregory Sams, who called it the 'VegeBurger'. Gregory and his brother Craig had run a natural food restaurant in Paddington since the 1960s;[1] a Carrefour hypermarket in Southampton sold 2000 packets in three weeks after its launch.[2] An earlier reference can be heard in the June 7th 1948 episode of \"Let George Do It\" called \"The Mister Mirch Case\" where a character refers to \"vegeburgers,\" as a burger made of nuts and legumes.\n" +
+//            "\n" +
+//            "Using the name Gardenburger, an early veggie burger was developed by Paul Wenner around 1980 or 1981 in Wenner's vegetarian restaurant, The Gardenhouse, in Gresham, Oregon.[3]"
+//    burgerFour.burgerImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Veganburger.jpeg/440px-Veganburger.jpeg"
 
     val burgerFive = BurgerVO()
     burgerFive.burgerName = "Fish Burger"
@@ -69,5 +69,5 @@ fun getDummyBurgers() : List<BurgerVO>{
             "Fischbrötchen, a sandwich made with fish and other components commonly eaten in Northern Germany, due to the region's proximity to the North Sea and Baltic Sea."
     burgerFive.burgerImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Salmon_burger.jpg/440px-Salmon_burger.jpg"
 
-    return arrayListOf(burgerOne,burgerTwo,burgerThree,burgerFour,burgerFive)
+    return arrayListOf(burgerOne,burgerTwo,burgerThree,burgerFive)
 }

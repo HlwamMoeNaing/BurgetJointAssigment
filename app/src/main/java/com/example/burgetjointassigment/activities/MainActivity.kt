@@ -37,7 +37,7 @@ class MainActivity : BaseActivity(), MainView{
     lateinit var tvCartCount:TextView
     lateinit var flContainer:FrameLayout
 lateinit var ivCart:ImageView
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setUpAnimations()
